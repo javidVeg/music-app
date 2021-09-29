@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import DisplaySongs from './DisplaySongs'
+import DisplaySongs from "./components/DisplaySong/displaySong";
 
 class App extends Component{
   constructor(){
@@ -10,8 +10,8 @@ class App extends Component{
     }
   }
 
-  componentDidmount(){
-    axios.get('www.devcodecampmusiclibrary.com/api/music')
+  componentDidMount(){
+    axios.get('http://www.devcodecampmusiclibrary.com/api/music')
     .then(response => this.setState({songs:response.data}));
   }
 
