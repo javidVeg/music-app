@@ -6,7 +6,7 @@ const DisplaySongs = (props) => {
             <table>
                 <thead>
                     <tr>
-                        <th>Title</th>
+                        <th>Title: </th>
                         <th>album</th>
                         <th>artist</th>
                         <th>genre</th>
@@ -14,7 +14,23 @@ const DisplaySongs = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* insert map here */}
+                    <div>
+                        <ul>
+                        {props.songs.map((song)=>{
+                            return(
+                                <li>Title: {song.title}
+                                <br></br> 
+                                Album: {song.album} 
+                                <br></br>
+                                Artist: {song.artist} 
+                                <br></br>
+                                Genre: {song.genre} 
+                                <br></br>
+                                Release Date: {song.releaseDate}</li>
+                            )
+                        })}
+                    </ul>
+                    </div>
                 </tbody>
             </table>
         </div>

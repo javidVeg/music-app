@@ -7,7 +7,7 @@ class App extends Component{
   constructor(){
     super();
     this.state = {
-      songs: []
+      songs: [""]
     }
   }
 
@@ -24,10 +24,9 @@ class App extends Component{
           <Navbar />
         </div>
         <div>
-          <DisplaySongs />
+          <DisplaySongs songs= {this.state.songs} />
         </div>
       </>
-      
     );
   }
 }
