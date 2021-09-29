@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import DisplaySongs from "./components/DisplaySong/displaySong";
+import DisplaySongs from "./DisplaySong/displaySong";
+import Navbar from "./Navbar/Navbar";
 
 class App extends Component{
   constructor(){
@@ -18,9 +19,15 @@ class App extends Component{
   render(){
     console.log(this.state.songs)
     return(
-      <div>
-        <DisplaySongs />
-      </div>
+      <>
+        <div>
+          <Navbar />
+        </div>
+        <div>
+          <DisplaySongs />
+        </div>
+      </>
+      
     );
   }
 }
