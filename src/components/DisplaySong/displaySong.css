@@ -1,0 +1,12 @@
+.tableStyle {
+    border: 1px solid black;
+    border-collapse: separate;
+    border-spacing:0 20px;
+    width:150px;
+    text-align:center;
+    border:1px solid black;
+    padding:5px;
+    border-right: hidden;
+    border-left: hidden;
+       
+  }

@@ -1,37 +1,37 @@
 import React from "react";
+import "./displaySong.css"
 
 const DisplaySongs = (props) => {
     return(
-        <div>
+        <div className="table-bordered table-striped table-hover container px-5 col-lg-6 tableStyle">
             <table>
-                <thead>
-                    <tr>
+                <div>
+                    <tr className="table tableStyle">
+                        <div class="">
                         <th>Title: </th>
-                        <th>album</th>
-                        <th>artist</th>
-                        <th>genre</th>
-                        <th>releaseDate</th>
+                        <th>Album: </th>
+                        <th>Artist: </th>
+                        <th>Genre: </th>
+                        <th>ReleaseDate: </th>
+                        </div>
                     </tr>
-                </thead>
-                <tbody>
-                    <div>
-                        <ul>
-                        {props.songs.map((song)=>{
+                </div>
+                
+                    <div className="table-bordered table-striped table-hover">{props.songs.map((song)=>{
                             return(
-                                <li>Title: {song.title}
-                                <br></br> 
-                                Album: {song.album} 
-                                <br></br>
-                                Artist: {song.artist} 
-                                <br></br>
-                                Genre: {song.genre} 
-                                <br></br>
-                                Release Date: {song.releaseDate}</li>
+                                <tr>
+                                    <td>{song.title}</td>
+                                    <td>{song.album}</td>
+                                    <td>{song.artist}</td>
+                                    <td>{song.genre}</td>
+                                    <td>{song.releaseDate}</td>
+                                </tr>
+                                
                             )
                         })}
-                    </ul>
                     </div>
-                </tbody>
+                    
+                
             </table>
         </div>
     )
