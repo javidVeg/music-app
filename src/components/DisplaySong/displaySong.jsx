@@ -14,7 +14,23 @@ const DisplaySongs = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* {props.songs.map((song))} */}
+                    <div>
+                        <ul>
+                        {props.songs.map((song)=>{
+                            return(
+                                <li>Title: {song.title}
+                                <br></br> 
+                                Album: {song.album} 
+                                <br></br>
+                                Artist: {song.artist} 
+                                <br></br>
+                                Genre: {song.genre} 
+                                <br></br>
+                                Release Date: {song.releaseDate}</li>
+                            )
+                        })}
+                    </ul>
+                    </div>
                 </tbody>
             </table>
         </div>
