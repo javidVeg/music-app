@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import DisplaySongs from "./DisplaySong/displaySong";
 import Navbar from "./Navbar/Navbar";
+import FilterSongs from "./FilterSongs/filterSongs";
+
 
 class App extends Component{
   constructor(){
@@ -22,6 +24,9 @@ class App extends Component{
       <>
         <div>
           <Navbar />
+        </div>
+        <div>
+          <FilterSongs songs= {this.state.songs} />
         </div>
         <div>
           <DisplaySongs songs= {this.state.songs} />
