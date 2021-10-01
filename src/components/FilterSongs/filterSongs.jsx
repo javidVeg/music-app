@@ -1,26 +1,18 @@
 import React from "react";
-import { Component } from "react";
 
-class FilterSongs extends Component {
-    constructor(){
-      super();
-      this.state = {
-        songs: [""]
-      }
-    }
 
-    render() {
-        return (
-            <form>
-                <p>Filter Songs</p>
-                <div>
-                    <input type="text" name="songs" value={this.state.songs} 
-                    onChange={this.handleChange} /> 
-                </div>
-            </form>
-        );
-    }
+function FilterSongs(props) {
+    return (
+        <form>
+            <p>Filter Songs</p>
+            <input type="text"
+            onChange= {props.handleChange} />
+            
+        </form>
+    );
 }
+    
+
 
 
 export default FilterSongs;
