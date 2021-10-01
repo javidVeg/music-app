@@ -31,7 +31,7 @@ class App extends Component{
         song.album.includes(this.state.userInput),
         song.artist.includes(this.state.userInput),
         song.genre.includes(this.state.userInput),
-        song.releaseDate.includes(this.state.userInput)
+        song.title.includes(this.state.userInput)
       )
     })
 

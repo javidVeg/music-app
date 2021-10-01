@@ -6,8 +6,7 @@ function FilterSongs(props) {
         <form>
             <p>Filter Songs</p>
             <input type="text"
-            onChange= {props.handleChange} />
-            
+            onChange= {props.handleChange} />    
         </form>
     );
 }
