@@ -26,12 +26,11 @@ class App extends Component{
 
   render(){
     let filteredSong = this.state.songs.filter(song => {
-      
       return(
-        song.title.includes(this.state.userInput) ||
-        song.album.includes(this.state.userInput) ||
-        song.artist.includes(this.state.userInput) ||
-        song.genre.includes(this.state.userInput) ||
+        song.title.includes(this.state.userInput),
+        song.album.includes(this.state.userInput),
+        song.artist.includes(this.state.userInput),
+        song.genre.includes(this.state.userInput),
         song.releaseDate.includes(this.state.userInput)
       )
     })
@@ -39,7 +38,6 @@ class App extends Component{
     return(
       <div>
         <Navbar />
-        <hr solid></hr>
         <FilterSongs handleChange= {(e)=>this.handleChange(e)} />
         <DisplaySongs songs= {filteredSong} />
       </div>

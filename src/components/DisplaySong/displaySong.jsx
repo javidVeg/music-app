@@ -4,10 +4,10 @@ import "../FilterSongs/filterSongs"
 
 const DisplaySongs = (props) => {
     return(
-        <div className="table-bordered table-striped table-hover container px-5 col-lg-6 tableStyle">
+        <div className="table-bordered table-striped table-hover container px-5 col-lg-6">
             <table className="table-bordered table-striped table-hover">
                     <thead>
-                        <tr className="table tableStyle">
+                        <tr className="tableStyle">
                             <th>Title: </th>
                             <th>Album: </th>
                             <th>Artist: </th>

@@ -1,12 +1,12 @@
 import React from "react";
-
+import "./filterSongs.css"
 
 function FilterSongs(props) {
     return (
         <form>
-            <p>Filter Songs</p>
-            <input type="text"
-            onChange= {props.handleChange} />    
+            <h3 className= "centerP">Filter Songs: <input type="text"
+            onChange= {props.handleChange} /> 
+            </h3>   
         </form>
     );
 }
