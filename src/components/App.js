@@ -14,7 +14,7 @@ class App extends Component{
   }
 
   componentDidMount(){
-    axios.get('http://www.devcodecampmusiclibrary.com/api/music')
+    axios.get('http://localhost:5000/api/songs')
     .then(response => this.setState({songs:response.data}));
   }
 
