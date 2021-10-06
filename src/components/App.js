@@ -3,6 +3,8 @@ import axios from "axios";
 import DisplaySongs from "./DisplaySong/displaySong";
 import Navbar from "./Navbar/Navbar";
 import FilterSongs from "./FilterSongs/filterSongs";
+import AddSong from "./AddSong/addSong";
+
 
 class App extends Component{
   constructor(){
@@ -42,6 +44,7 @@ class App extends Component{
         <hr solid></hr>
         <FilterSongs handleChange= {(e)=>this.handleChange(e)} />
         <DisplaySongs songs= {filteredSong} />
+        <AddSong />
       </div>
     );
   }
