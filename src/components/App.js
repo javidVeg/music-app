@@ -15,9 +15,14 @@ class App extends Component{
     }
   }
 
-  componentDidMount(){
+  updateAxios(){
     axios.get('http://localhost:5000/api/songs')
     .then(response => this.setState({songs:response.data}));
+    console.log("updated");
+  }
+
+  componentDidMount(){
+    this.updateAxios();
   }
 
   handleChange(event){
@@ -44,7 +49,7 @@ class App extends Component{
         <hr solid></hr>
         <FilterSongs handleChange= {(e)=>this.handleChange(e)} />
         <DisplaySongs songs= {filteredSong} />
-        <AddSong />
+        <AddSong updateAxios = {() => this.updateAxios()} />
       </div>
     );
   }

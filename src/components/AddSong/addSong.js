@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { Component } from 'react';
 import './addSong.css'
@@ -25,30 +26,25 @@ class AddSong extends Component {
     
     handleSubmit(event){
         event.preventDefault();
-        const song = {
+          
+        
+        axios.post('http://localhost:5000/api/songs', {
             title: this.state.title,
             album: this.state.album,
             artist: this.state.artist,
             genre: this.state.genre,
-            releaseDate: this.state.releaseDate   
-        }
-        this.props.addNewSong(song);
-        this.setState({
-            title: '',
-            album: '',
-            artist: '',
-            genre: '',
-            releaseDate: ''
-        });
+            releaseDate: this.state.releaseDate 
+        })
+            .then(res => {
+                console.log(res);
+                console.log(res.data);
+                this.props.updateAxios();
+            });
     }
 
     render() { 
         return (
-            <div>
-                <hr /> 
-                <center> 
-                <h3>Add a new song!</h3> 
-                </center>
+            
                 <form onSubmit={this.handleSubmit}> 
                     <div className="row col-align"> 
                         <div className="col-md-4"> 
@@ -81,7 +77,7 @@ class AddSong extends Component {
                         </div> 
                     </div> 
                 </form> 
-            </div>
+            
          ); 
     } 
 }
