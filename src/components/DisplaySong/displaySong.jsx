@@ -25,6 +25,7 @@ const DisplaySongs = (props) => {
                                     <td>{song.artist}</td>
                                     <td>{song.genre}</td>
                                     <td>{song.releaseDate}</td>
+                                    <button type= "button" onClick= {""} >X</button>
                                 </tr>
                             )
                         })}

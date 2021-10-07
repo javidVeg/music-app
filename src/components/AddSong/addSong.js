@@ -26,8 +26,6 @@ class AddSong extends Component {
     
     handleSubmit(event){
         event.preventDefault();
-          
-        
         axios.post('http://localhost:5000/api/songs', {
             title: this.state.title,
             album: this.state.album,
@@ -39,12 +37,19 @@ class AddSong extends Component {
                 console.log(res);
                 console.log(res.data);
                 this.props.updateAxios();
+                this.setState({
+                    title: '',
+                    album: '',
+                    artist: '',
+                    genre: '',
+                    releaseDate: ''
+                })
             });
     }
 
     render() { 
         return (
-            
+            <body>
                 <form onSubmit={this.handleSubmit}> 
                     <div className="row col-align"> 
                         <div className="col-md-4"> 
@@ -77,7 +82,7 @@ class AddSong extends Component {
                         </div> 
                     </div> 
                 </form> 
-            
+            </body>
          ); 
     } 
 }
