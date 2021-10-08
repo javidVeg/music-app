@@ -36,7 +36,7 @@ class AddSong extends Component {
             .then(res => {
                 console.log(res);
                 console.log(res.data);
-                this.props.updateAxios();
+                this.props.postToAxios();
                 this.setState({
                     title: '',
                     album: '',

@@ -15,14 +15,20 @@ class App extends Component{
     }
   }
 
-  updateAxios(){
+  postToAxios(){
     axios.get('http://localhost:5000/api/songs')
     .then(response => this.setState({songs:response.data}));
     console.log("updated");
   }
 
+  deleteToAxios(){
+    axios.delete(`http://localhost:5000/api/songs/${this.state.id}`)
+    .then(response => this.setState({songs:response.data}));
+    console.log("updated");
+  }
+
   componentDidMount(){
-    this.updateAxios();
+    this.postToAxios();
   }
 
   handleChange(event){
@@ -33,7 +39,6 @@ class App extends Component{
 
   render(){
     let filteredSong = this.state.songs.filter(song => {
-      
       return(
         song.title.includes(this.state.userInput) ||
         song.album.includes(this.state.userInput) ||
@@ -49,7 +54,7 @@ class App extends Component{
         <hr solid></hr>
         <FilterSongs handleChange= {(e)=>this.handleChange(e)} />
         <DisplaySongs songs= {filteredSong} />
-        <AddSong updateAxios = {() => this.updateAxios()} />
+        <AddSong postToAxios = {() => this.postToAxios()} />
       </div>
     );
   }
